@@ -99,8 +99,3 @@ def scraper_openalex(busca, limite=100):
 if __name__ == '__main__':
     r = scraper_openalex("data mining", limite=7)
     print(len(r))
-#nota para o eu de amanhã: verificar o bgl de open access e link direto pra pdf
-
-
-
- 
