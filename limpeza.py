@@ -18,9 +18,9 @@ def limpar(df):
         .str.lower()
         .apply(lambda x: "; ".join(
             sorted({
-                k.strip()                     # remove espaços externos
-                for k in x.split(";")         # separa por ';'
-                if k.strip() not in {"", "-", "–", "nan", "none"}  # remove lixo
+                k.strip()                    
+                for k in x.split(";")       
+                if k.strip() not in {"", "-", "–", "nan", "none"} 
             })
         ))
     )
@@ -46,12 +46,10 @@ def limpar(df):
 
             content_type = resp.headers.get("Content-Type", "").lower()
 
-            # Checa se o link realmente aponta para PDF
             if "pdf" in content_type:
                 linhas_validas.append(row)
 
         except Exception:
-            # Se deu erro de conexão, ignoramos
             continue
 
     return df
@@ -61,6 +59,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
