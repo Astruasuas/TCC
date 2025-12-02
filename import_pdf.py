@@ -70,7 +70,6 @@ def baixar_pdfs(
                 with open(caminho_arquivo, "wb") as arquivo_pdf:
                     arquivo_pdf.write(resposta_http.content)
 
-                print(f'Baixado com sucesso: {caminho_arquivo}')
                 pdfs_salvos.append(caminho_arquivo)
                 break
 
@@ -93,6 +92,7 @@ def main():
 
 if __name__ == '__main__':
     main()
+
 
 
 
