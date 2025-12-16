@@ -12,7 +12,7 @@ def scraper_openalex(busca, limite=100):
         "filter": "is_oa:true",
         "per_page": per_page,
         "cursor": "*",
-        "mailto": "seuemail@email.com"
+        "mailto": "ruastruasuas@gmail.com"
     }
 
     barra = tqdm(desc="Coletando obras", unit=" artigo")
@@ -99,3 +99,7 @@ def scraper_openalex(busca, limite=100):
 if __name__ == '__main__':
     r = scraper_openalex("data mining", limite=7)
     print(len(r))
+#nota para o eu de amanhã: verificar o bgl de open access e link direto pra pdf
+
+
+ 

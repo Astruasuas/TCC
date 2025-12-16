@@ -1,0 +1,321 @@
+<?xml version="1.0"?>
+<rdf:RDF xmlns="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario/"
+     xml:base="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario/"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:Sistema_Usuario="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#"
+     xmlns:untitled-ontology-7="http://www.semanticweb.org/ruanp/ontologies/2025/10/untitled-ontology-7#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario">
+        <rdfs:comment>Ontologia que regista os perfis de usuário para uso em um programa que auxilia no processo de disseminação seletiva da informação.</rdfs:comment>
+    </owl:Ontology>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Object Properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#falaIdioma -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#falaIdioma">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Usuario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Idiomas"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#temInteresse -->
+
+    <owl:ObjectProperty rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#temInteresse">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topObjectProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Usuario"/>
+        <rdfs:range rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+    </owl:ObjectProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Data properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#rotuloEN -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#rotuloEN">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Idiomas"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#rotuloPT -->
+
+    <owl:DatatypeProperty rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#rotuloPT">
+        <rdfs:subPropertyOf rdf:resource="http://www.w3.org/2002/07/owl#topDataProperty"/>
+        <rdfs:domain rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Idiomas"/>
+        <rdfs:range rdf:resource="http://www.w3.org/2001/XMLSchema#string"/>
+    </owl:DatatypeProperty>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Sistema"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Estudante -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Estudante">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Usuario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Idiomas -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Idiomas">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Sistema"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Instituição -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Instituição">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Usuario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Pesquisador -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Pesquisador">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Usuario"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Sistema -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Sistema"/>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Usuario -->
+
+    <owl:Class rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Usuario">
+        <rdfs:subClassOf rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Sistema"/>
+    </owl:Class>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Estudante_1 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Estudante_1">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Estudante"/>
+        <Sistema_Usuario:falaIdioma rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#portugues"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#abnt"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#catalogacao"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#estudo_de_usuario"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#OC -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#OC">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>Knowledge Organization</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Organização do Conhecimento</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Pesquisador_2 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Pesquisador_2">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Pesquisador"/>
+        <Sistema_Usuario:falaIdioma rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#ingles"/>
+        <Sistema_Usuario:falaIdioma rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#portugues"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#big_data"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#ciencia_da_informacao"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#data_mining"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#web_semantica"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#abnt -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#abnt">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>ABNT - Brazil</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>ABNT</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#big_data -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#big_data">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>Big Data</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>grandes dados</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#catalogacao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#catalogacao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>Cataloging</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Catalogação</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#ciencia_da_informacao -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#ciencia_da_informacao">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>Information Science</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Ciência da Informação</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#data_mining -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#data_mining">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>data mining</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>mineração de dados</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#estudo_de_usuario -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#estudo_de_usuario">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>User Studies</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Estudo de Usuários</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#ingles -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#ingles">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Idiomas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#instituição_3 -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#instituição_3">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Instituição"/>
+        <Sistema_Usuario:falaIdioma rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#ingles"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#interoperabilidade"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#politicas_de_acesso_aberto"/>
+        <Sistema_Usuario:temInteresse rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#preservacao_digital"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#interoperabilidade -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#interoperabilidade">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>interoperability</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Interoperabilidade</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#politicas_de_acesso_aberto -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#politicas_de_acesso_aberto">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>open acess policy</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Políticas de Acesso Aberto</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#portugues -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#portugues">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Idiomas"/>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#preservacao_digital -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#preservacao_digital">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>digital preservation</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Preservação Digital</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+    
+
+
+    <!-- http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#web_semantica -->
+
+    <owl:NamedIndividual rdf:about="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#web_semantica">
+        <rdf:type rdf:resource="http://www.semanticweb.org/ruanp/ontologies/2025/10/Sistema_Usuario#Assunto"/>
+        <Sistema_Usuario:rotuloEN>Semantic Web</Sistema_Usuario:rotuloEN>
+        <Sistema_Usuario:rotuloPT>Web Semântica</Sistema_Usuario:rotuloPT>
+    </owl:NamedIndividual>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi -->
+

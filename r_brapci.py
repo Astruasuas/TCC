@@ -1,7 +1,7 @@
 import requests
 from tqdm import tqdm
 
-def scraper_brapci(busca, resultados = 2):
+def scraper_brapci(busca, resultados = 5):
     url = "https://cip.brapci.inf.br/api/brapci/search/v3"
 
     lista_de_obras = []

@@ -11,7 +11,7 @@ import pandas as pd
 
 inicio = time.time()
 
-termos_pt, termos_en = interesses(estudante)
+termos_pt, termos_en = interesses(pesquisador)
 
 interesse = termos_pt + termos_en
 interesse = sum(interesse, [])
@@ -45,6 +45,8 @@ print("Calculando similaridade dos artigos com o gosto do usuário...")
 df_mineracao = minerar(df_mineracao)
 
 baixar_pdfs(df_mineracao)
+
+print("Iniciando mineração dos textos")
 
 texto_pdfs = devolver_texto("pdfs")
 textos_limpos = {

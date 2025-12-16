@@ -18,9 +18,9 @@ def limpar(df):
         .str.lower()
         .apply(lambda x: "; ".join(
             sorted({
-                k.strip()                    
-                for k in x.split(";")       
-                if k.strip() not in {"", "-", "–", "nan", "none"} 
+                k.strip()                     # remove espaços externos
+                for k in x.split(";")         # separa por ';'
+                if k.strip() not in {"", "-", "–", "nan", "none"}  # remove lixo
             })
         ))
     )
@@ -37,7 +37,6 @@ def limpar(df):
     for idx, row in df.iterrows():
         link = str(row["Link"]).strip()
 
-        # Ignora vazios
         if not link or link.lower() == "nan":
             continue
 
@@ -59,7 +58,6 @@ def main():
 
 if __name__ == '__main__':
     main()
-
 
 
 
