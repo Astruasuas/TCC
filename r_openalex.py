@@ -1,23 +1,34 @@
+"""
+Esse script faz a raspagem das obras do OpenAlex.
+Funcionalidade de cada importação:
+
+request --> Fazer requisições do site
+tqdm --> Barra de progresso
+"""
+
 import requests
 from tqdm import tqdm
 
+# Essa função faz uma raspagem no OpenAlex, o campo "busca" recebe como entrada um interesse do usuário.
 def scraper_openalex(busca, limite=100):
     url = "https://api.openalex.org/works"
     lista_de_obras = []
 
     per_page = 50 if limite > 50 else limite
 
+    # Parametros do mecanismo de busca interno do site
     parametros = {
         "search": busca,
         "filter": "is_oa:true",
         "per_page": per_page,
         "cursor": "*",
-        "mailto": "ruastruasuas@gmail.com"
+        "mailto": "seu@email"
     }
 
     barra = tqdm(desc="Coletando obras", unit=" artigo")
 
     while len(lista_de_obras) < limite:
+        # O script verifica se o site consegue devolver um JSON válido
         resposta = requests.get(url, params=parametros)
 
         if resposta.status_code != 200:
@@ -39,6 +50,7 @@ def scraper_openalex(busca, limite=100):
         if not resultados:
             break
 
+        # Pega as informações de cada obra e coloca na lista que será devolvida.
         for artigo in resultados:
             if len(lista_de_obras) >= limite:
                 break
@@ -81,7 +93,7 @@ def scraper_openalex(busca, limite=100):
                 "Editora": editora,
                 "Ano": ano,
                 "Palavras-chave": texto_kw,
-                "Texto" : titulo + "; " + texto_kw,
+                "Texto" : titulo + "; " + texto_kw, # Essa parte é necessária para a mineração de dados
                 "Link" : url
             })
 
@@ -99,7 +111,6 @@ def scraper_openalex(busca, limite=100):
 if __name__ == '__main__':
     r = scraper_openalex("data mining", limite=7)
     print(len(r))
-#nota para o eu de amanhã: verificar o bgl de open access e link direto pra pdf
 
 
  
