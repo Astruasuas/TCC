@@ -1,3 +1,14 @@
+"""
+Esse script faz extração e limpeza dos textos dos pdfs.
+Função das bibliotecas:
+
+os --> Manipulação de pastas
+re --> Limpeza
+nltk --> Processamento de linguagem natural
+stopwords --> Identificar stopwords no texto
+PdfReader --> Ler pdfs
+"""
+
 import os
 import re
 import nltk
@@ -7,6 +18,7 @@ from pypdf import PdfReader
 nltk.download("stopwords")
 stopwords_pt = set(stopwords.words("portuguese"))
 
+# Recebe um caminho de arquivo e extrai o texto do pdf.
 def extrair_texto(caminho_arquivo):
 
     leitor = PdfReader(caminho_arquivo)
@@ -16,6 +28,7 @@ def extrair_texto(caminho_arquivo):
 
     return texto
 
+# Pega os textos extraídos e associa ao Id correto, devolvendo um dicionário.
 def devolver_texto(pasta):
 
     resultados = {}
@@ -32,6 +45,7 @@ def devolver_texto(pasta):
 
     return resultados
 
+# Limpa o texto.
 def limpar_texto(texto):
 
     texto.lower()

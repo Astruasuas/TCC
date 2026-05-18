@@ -1,13 +1,19 @@
-import pandas as pd
+"""
+Esse script limpa os data frames, normalizando os termos, removendo entradas com  links invalidos e removendo obras que não constam informações chave.
+"""
+
 import requests
 
+# Função de limpeza
 def limpar(df):
 
     df = df.copy()
 
+    # Tirar duplicatas e entradas inválidas.
     df.drop_duplicates(subset=['Título'], inplace=True)
     df = df.dropna(subset=['Título','Palavras-chave', 'Autores'])
 
+    # Tirar caracteres inúteis, separar por ';' e espaços extras.
     df['Autores'] = df['Autores'].apply(
         lambda x: "; ".join([a.strip() for a in str(x).replace(",", ";").split(";")])
     )
@@ -18,9 +24,9 @@ def limpar(df):
         .str.lower()
         .apply(lambda x: "; ".join(
             sorted({
-                k.strip()                     # remove espaços externos
-                for k in x.split(";")         # separa por ';'
-                if k.strip() not in {"", "-", "–", "nan", "none"}  # remove lixo
+                k.strip()
+                for k in x.split(";")
+                if k.strip() not in {"", "-", "–", "nan", "none"}
             })
         ))
     )
@@ -30,6 +36,7 @@ def limpar(df):
         lambda x: "; ".join([w for w in x.split(";") if w not in remover])
     )
 
+    # Tirar links inválidos.
     df = df[df["Link"].notna() & (df["Link"].str.strip() != "")]
 
     linhas_validas = []
@@ -40,6 +47,7 @@ def limpar(df):
         if not link or link.lower() == "nan":
             continue
 
+        # Verifica se o link funciona
         try:
             resp = requests.head(link, timeout=5, allow_redirects=True)
 

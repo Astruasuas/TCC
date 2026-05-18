@@ -1,3 +1,12 @@
+"""
+Esse script possui funções para fazer os processos de manipulação de PDFs
+Função das bibliotecas:
+re --> Substituir caracteres inválidos
+os --> Manipulação de pastas
+requests --> Baixar os arquivos
+RequestException --> Tratamento de erros
+"""
+
 import re
 import os
 import time
@@ -5,12 +14,13 @@ from tqdm import tqdm
 import requests
 from requests.exceptions import RequestException
 
+# Essa função formata o nome da obra com o ID associado a ela.
 def formatar_nome_arquivo(nome,id_obra):
-
     nome = re.sub(r'[\\/*?:"<>|]', '_', nome)
     nome = f"{id_obra}_{nome}.pdf"
     return nome[:200]
 
+# Verifica se o arquivo a ser baixado é um pdf.
 def ver_se_pdf(resposta_http):
 
     tipo_de_conteudo = resposta_http.headers.get("Content-Type", "").lower()
@@ -22,6 +32,7 @@ def ver_se_pdf(resposta_http):
 
     return url_final.lower().endswith('.pdf')
 
+# Baixa pdfs de acordo com especificações da busca.
 def baixar_pdfs(
         dataframe,
         quantidade_baixar = 13,

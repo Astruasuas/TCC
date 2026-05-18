@@ -1,7 +1,18 @@
+"""
+Esse script faz a raspagem das obras do BRAPCI.
+Funcionalidade de cada importação:
+
+request --> Fazer requisições do site
+tqdm --> Barra de progresso
+"""
+
 import requests
 from tqdm import tqdm
 
-def scraper_brapci(busca, resultados = 5):
+# Essa função faz uma raspagem no BRAPCI, o campo "busca" recebe como entrada um interesse do usuário.
+def scraper_brapci(busca: str,
+                   resultados: int = 5) -> list:
+
     url = "https://cip.brapci.inf.br/api/brapci/search/v3"
 
     lista_de_obras = []
@@ -9,6 +20,7 @@ def scraper_brapci(busca, resultados = 5):
 
     barra = tqdm(desc="Coletando obras", unit=" artigo")
 
+    # Essas especificações correspondem ao que é pedido no JSON do site.
     while True:
         payload = {
             "term": busca,
@@ -20,6 +32,7 @@ def scraper_brapci(busca, resultados = 5):
             "offset": offset
         }
 
+        # O script verifica se o cite consegue devolver um JSON válido.
         response = requests.post(url, data=payload)
         try:
             dados = response.json()
@@ -37,6 +50,7 @@ def scraper_brapci(busca, resultados = 5):
         if len(lista_de_obras) >= resultados:
             break
 
+        # Pega as informações de cada obra e coloca na lista que será devolvida.
         for artigo in artigos:
             metadados = artigo["data"]
 
@@ -47,7 +61,7 @@ def scraper_brapci(busca, resultados = 5):
                                    "Editora" : metadados.get("JOURNAL"),
                                    "Ano" : artigo.get("year"),
                                    "Palavras-chave" : metadados.get("KEYWORDS"),
-                                   "Texto" : metadados.get("TITLE") + "; " + metadados.get("KEYWORDS"),
+                                   "Texto" : metadados.get("TITLE") + "; " + metadados.get("KEYWORDS"), # Essa parte é necessária para a mineração de dados
                                    "Link" : f"https://cip.brapci.inf.br//download/{metadados.get("ID")}"})
 
             barra.update(1)
@@ -56,6 +70,7 @@ def scraper_brapci(busca, resultados = 5):
                 break
 
 
+        # Pega o prócimo conjunto de obras, como se estivesse "passando a página".
         offset += 6
 
     barra.close()

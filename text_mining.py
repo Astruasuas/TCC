@@ -1,3 +1,12 @@
+"""
+Esse script faz a mineração dos textos e gera uma nuvem de termos.
+Função das bibliotecas:
+TfidVectorizer --> Vetorizar os textos
+cosine_similarity --> Calcular similaridade
+WordCloud --> Gerar nuvem de termos
+matplotlib --> Auxiliar o wordcloud
+"""
+
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import cosine_similarity
 from wordcloud import WordCloud
@@ -9,10 +18,11 @@ def gerar_wordcloud(texto):
     plt.figure(figsize=(12, 6))
     plt.imshow(wc, interpolation="bilinear")
     plt.axis("off")
-    plt.show(block=False)
+    plt.savefig("nuvem.png", dpi=300, bbox_inches="tight")
+    plt.close()
 
 def minerar_textos(textos_limpos, perfil_texto, df_obras, wc = True):
-    ids = list(textos_limpos.keys())
+    ids = list(textos_limpos.keys())  # Por algum motivo nada funciona se eu tirar isso
     corpus = list(textos_limpos.values()) + [perfil_texto]
 
     vectorizer = TfidfVectorizer()

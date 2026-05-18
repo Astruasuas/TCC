@@ -1,3 +1,7 @@
+"""
+Esse script pega as ontologias contendo os perfis dos usuários.
+"""
+
 from owlready2 import *
 
 sistema = get_ontology('sistema_usuario_tcc.rdf').load()
@@ -9,6 +13,7 @@ instituicao = sistema.instituição_3
 pt = sistema.portugues
 en = sistema.ingles
 
+# Essa função recebe um perfil de usuário e separa os interesses por idioma
 def interesses(perfil):
 
     fala_pt = pt in perfil.falaIdioma
